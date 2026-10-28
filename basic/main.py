@@ -17,19 +17,26 @@ def count_vowels(text):
     """Count how many vowels (a, e, i, o, u) are in text.
     Uppercase and lowercase vowels should both count.
 
-    :param text:
-    :return:
+    :param text: THe text to check
+    :return: The number of voewels
     """
-    pass
+    count = 0
+
+    for letter in text.lower():
+        if letter in "aeiou":
+            count += 1
+
+    return count
+
 
 
 def celsius_to_fahrenheit(celsius):
     """Convert a Celsius temperature to Fahrenheit.
 
-    :param celsius:
-    :return:
+      :param celsius: The temperature in Celsius.
+    :return: The temperature in Fahrenheit.
     """
-    pass
+    return celsius * 9 / 5 + 32
 
 
 def reverse_text(text):
@@ -38,31 +45,36 @@ def reverse_text(text):
     Example:
         "robot" becomes "tobor"
 
-    :param text:
-    :return:
+    :param text: The text to reverse
+    :return: Reversed text
     """
-    pass
+    return text[::-1]
 
 
 def larger_number(a, b):
     """Return whichever of the two integers is larger.
     If they are equal, return either value.
 
-    :param a:
-    :param b:
-    :return:
+    :param a:The firts number
+    :param b: The second number
+    :return: THe larger of the two numbers
     """
-    pass
+    if a > b:
+        return a
+    else:
+        return b
+
+
 
 
 def average_two(a, b):
     """Calculate and return the average of two integers.
 
-    :param a:
-    :param b:
-    :return:
+ :param a: The first number.
+    :param b: The second number.
+    :return: The average of the two numbers.:
     """
-    pass
+    return (a + b) / 2
 
 
 def can_afford(balance, cost):
@@ -83,22 +95,22 @@ def repeat_text(text, times):
     Example:
         repeat_text("Go!", 3) returns "Go!Go!Go!"
 
-    :param text:
-    :param times:
-    :return:
+       :param balance: The amount of money available.
+    :param cost: The price of the item.
+    :return: True if you can afford it, otherwise False.
     """
-    pass
+    return balance >= cost
 
 
 def contains_word(sentence, word):
     """Return True if word appears somewhere inside sentence.
     Otherwise, return False.
 
-    :param sentence:
-    :param word:
-    :return:
+    :param sentence: THe sentence eto search.
+    :param word: THe word to look for
+    :return: True if the word is found, otherwise false
     """
-    pass
+    return word in sentence
 
 
 def calculate_tip(cost, percent):
@@ -107,11 +119,11 @@ def calculate_tip(cost, percent):
     Example:
         A cost of 20.0 and percent of 15 returns 3.0.
 
-    :param cost:
-    :param percent:
-    :return:
+       :param cost: The ORiginal cost.
+    :param percent: The tip percentage.
+    :return: The amount of the tip.
     """
-    pass
+    return cost * percent / 100
 
 
 def make_initials(first_name, last_name):
@@ -120,11 +132,11 @@ def make_initials(first_name, last_name):
     Example:
         "Ada" and "Lovelace" returns "AL".
 
-    :param first_name:
-    :param last_name:
-    :return:
+     :param first_name: The person's first name.
+    :param last_name: The person's last name.
+    :return: The uppercase initials of both Names.
     """
-    pass
+    return first_name[0].upper() + last_name[0].upper()
 
 
 def percent_score(points, possible):
@@ -134,23 +146,25 @@ def percent_score(points, possible):
     Example:
         18 out of 20 returns 90.0.
 
-    :param points:
-    :param possible:
-    :return:
+    :param points: The points earned.
+    :param possible: The total points possible.
+    :return: The percentage earned, or None if possible is less than 1.
     """
-    pass
+    if possible < 1:
+        return None
+    return points / possible * 100
 
 
 def is_between(number, minimum, maximum):
     """Return True if number is between minimum and maximum,
     including the minimum and maximum values.
 
-    :param number:
-    :param minimum:
-    :param maximum:
-    :return:
+     :param number: The number to check.
+    :param minimum: The lowest allowed value.
+    :param maximum: The highest allowed value.
+    :return: True if the number is within the range, otherwise False.
     """
-    pass
+    return minimum <= number <= maximum
 
 
 def all_different(a, b, c):
@@ -158,23 +172,23 @@ def all_different(a, b, c):
     Return True if all three strings are different.
     Otherwise,return False.
 
-    :param a:
-    :param b:
-    :param c:
-    :return:
+ :param a: The first string.
+    :param b: The second string.
+    :param c: The third string.
+    :return: True if all three strings are different, otherwise False.
     """
-    pass
+    return a != b and a != c and b != c
 
 
 def average_three(a, b, c):
     """Calculate and return the average of three integers.
 
-    :param a:
-    :param b:
-    :param c:
-    :return:
+      :param a: The first number.
+    :param b: The second number.
+    :param c: The third number.
+    :return: The average of the three numbers.
     """
-    pass
+    return (a + b + c) / 3
 
 
 def describe_temperature(temperature, cold_limit, hot_limit):
@@ -183,12 +197,17 @@ def describe_temperature(temperature, cold_limit, hot_limit):
     "hot" if temperature is above hot_limit,
     "comfortable" otherwise.
 
-    :param temperature:
-    :param cold_limit:
-    :param hot_limit:
-    :return:
+     :param temperature: The temperature to check.
+    :param cold_limit: The temperature limit for cold.
+    :param hot_limit: The temperature limit for hot.
+    :return: "cold", "hot", or "comfortable".
     """
-    pass
+    if temperature < cold_limit:
+        return "cold"
+    elif temperature > hot_limit:
+        return "hot"
+    else:
+        return "comfortable"
 
 if __name__ == "__main__":
     """
@@ -197,5 +216,19 @@ if __name__ == "__main__":
     Additionally, there is a test file loaded into
     this folder that you can run a test on your code.
     """
-    pass
-
+    print(is_even(4))
+    print(count_vowels("Hello"))
+    print(celsius_to_fahrenheit(0))
+    print(reverse_text("Helene Tchemawe"))
+    print(larger_number(5, 8))
+    print(average_two(4, 6))
+    print(can_afford(20, 15))
+    print(repeat_text("Helene the queen!", 67))
+    print(contains_word("hello world", "world"))
+    print(calculate_tip(20, 15))
+    print(make_initials("Helene", "Queen"))
+    print(percent_score(18, 20))
+    print(is_between(5, 1, 10))
+    print(all_different("C", "B", "A"))
+    print(average_three(1, 6, 5))
+    print(describe_temperature(22, 60, 5))
