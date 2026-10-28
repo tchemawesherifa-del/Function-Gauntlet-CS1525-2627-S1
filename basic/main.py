@@ -1,10 +1,16 @@
+from operator import truediv
+
+
 def is_even(number):
     """ Return True if number is even and False if it is odd.
 
     :param number:
     :return:
     """
-    pass
+    if number % 2 == 0:
+        return True
+    else:
+        return False
 
 
 def count_vowels(text):
